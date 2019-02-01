@@ -1,66 +1,64 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import gtk
-import gobject
-
+from gi.repository import Gtk, GObject
 from gettext import gettext as _
 
-class Data(gtk.TreeView):
+class Data(Gtk.TreeView):
 
     __gsignals__ = {
-             'some-changed': (gobject.SIGNAL_RUN_FIRST, None, [str, str], ), }
+             'some-changed': (GObject.SIGNAL_RUN_FIRST, None, [str, str], ), }
              
 
     def __init__(self, activity):
 
-        gtk.TreeView.__init__(self)
+        Gtk.TreeView.__init__(self)
 
-        self.model = gtk.ListStore(str, str, str, str)
+        self.model = Gtk.ListStore(str, str, str, str)
         self.set_model(self.model)
 
         # Label column
 
-        column = gtk.TreeViewColumn(_("Position"))
-        label = gtk.CellRendererText()
+        column = Gtk.TreeViewColumn(_("Position"))
+        label = Gtk.CellRendererText()
         label.set_property('editable', True)
         label.connect("edited", self._label_changed, self.model)
 
-        column.pack_start(label)
+        column.pack_start(label, False)
         column.set_attributes(label, text=0)
         self.append_column(column)
 
         # Value column
 
-        column = gtk.TreeViewColumn(_("Name"))
-        value = gtk.CellRendererText()
+        column = Gtk.TreeViewColumn(_("Name"))
+        value = Gtk.CellRendererText()
         value.set_property('editable', True)
         value.connect("edited", self._value_changed, self.model)
 
-        column.pack_start(value)
+        column.pack_start(value, False)
         column.set_attributes(value, text=1)
         column.set_expand(True)
         self.append_column(column)
 
         # dx column
 
-        column = gtk.TreeViewColumn(_("dx"))
-        value = gtk.CellRendererText()
+        column = Gtk.TreeViewColumn(_("dx"))
+        value = Gtk.CellRendererText()
         value.set_property('editable', True)
         value.connect("edited", self._dx_changed, self.model)
 
-        column.pack_start(value)
+        column.pack_start(value, False)
         column.set_attributes(value, text=2)
         self.append_column(column)
 
         # dy column
 
-        column = gtk.TreeViewColumn(_("dy"))
-        value = gtk.CellRendererText()
+        column = Gtk.TreeViewColumn(_("dy"))
+        value = Gtk.CellRendererText()
         value.set_property('editable', True)
         value.connect("edited", self._dy_changed, self.model)
 
-        column.pack_start(value)
+        column.pack_start(value, False)
         column.set_attributes(value, text=3)
         self.append_column(column)
         self.set_enable_search(False)

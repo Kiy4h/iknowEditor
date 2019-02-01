@@ -43,4 +43,3 @@ def fixValues(data, scale, shift_x, shift_y):
         dy = e[4]
         l.append((name, pos_x, pos_y, dx, dy))
     return l
-

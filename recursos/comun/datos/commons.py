@@ -63,4 +63,3 @@ CREDITS = [
     _("Sounds downloaded from freesound.org: btn117.wav courtesy of junggle."),
     _("Font: Share-Regular.ttf of urbanfonts.com")
 ]
-

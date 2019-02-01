@@ -32,12 +32,7 @@ import imp
 import gettext
 import ConfigParser
 from gettext import gettext as _
-
-gtk_present = True
-try:
-    import gtk
-except:
-    gtk_present = False
+from gi.repository import Gtk
 
 X_SIZE = 800.0
 Y_SIZE = 900.0
@@ -514,8 +509,8 @@ class Conozco():
 
         while 1:
 
-            while gtk.events_pending():
-                gtk.main_iteration()
+            while Gtk.events_pending():
+                Gtk.main_iteration()
 
             for event in pygame.event.get():
                 if event.type == pygame.MOUSEBUTTONDOWN:
