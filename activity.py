@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import gi
+gi.require_version('Gtk', '3.0')
 import sys
 import pygame
 
@@ -110,7 +112,6 @@ class Activity(activity.Activity):
         self.box1.add(self.actividad.canvas)
 
         self.actividad.canvas.grab_focus()
-        #self._pygamecanvas.run_pygame(self.actividad.principal)
 
     def _save(self, widget):
         l = self.labels_and_values.get_info()
