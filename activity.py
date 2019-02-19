@@ -8,7 +8,7 @@ import pygame
 
 from gi.repository import Gtk
 
-from sugar3.activity import activity
+from sugar3.activity.activity import Activity
 from sugar3.graphics.toolbarbox import ToolbarBox
 from sugar3.activity.widgets import ActivityToolbarButton
 from sugar3.graphics.toolbutton import ToolButton
@@ -22,10 +22,10 @@ import conozco
 from points_list import Data
 from save_util import save, fixValues
 
-class Activity(activity.Activity):
+class IknowEditor(Activity):
 
     def __init__(self, handle):
-        activity.Activity.__init__(self, handle)
+        Activity.__init__(self, handle)
         self.init_vars()
         self.build_toolbar()
         self.actividad = conozco.Conozco(self)
@@ -36,10 +36,7 @@ class Activity(activity.Activity):
     def init_vars(self):
         self._image = None
 
-
-
     def build_toolbar(self):
-
         self.max_participants = 1
 
         toolbar_box = ToolbarBox()

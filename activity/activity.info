@@ -3,6 +3,6 @@ name = I know Editor
 activity_version = 1
 bundle_id = org.ceibaljam.iknoweditor
 icon = editor
-exec = sugar-activity activity.Activity
+exec = sugar-activity activity.IknowEditor
 license = GPLv3
 summary = Activity to create I know games
