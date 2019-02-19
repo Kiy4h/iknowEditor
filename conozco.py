@@ -313,6 +313,9 @@ class Conozco():
         return imagen
 
     def __init__(self, parent):
+        # Set up a clock for managing the frame rate.
+        self.clock = pygame.time.Clock()
+
         self.parent = parent
         file_activity_info = ConfigParser.ConfigParser()
         activity_info_path = os.path.abspath('activity/activity.info')
@@ -524,9 +527,8 @@ class Conozco():
                     self.parent._add_coor(pos)
                     #print pos
 
-
-
             pygame.display.flip()
+            self.clock.tick(25)
 
 
 
