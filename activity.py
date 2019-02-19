@@ -104,7 +104,7 @@ class IknowEditor(Activity):
 
     def run_canvas(self):
         self.actividad.canvas = sugargame.canvas.PygameCanvas(self,
-                                    main=self.actividad.principal,
+                                    main=self.actividad.run,
                                     modules=[pygame.display, pygame.font])
         self.box1.add(self.actividad.canvas)
 

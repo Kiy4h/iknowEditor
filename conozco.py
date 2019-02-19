@@ -496,8 +496,9 @@ class Conozco():
     def getShiftY(self):
         return shift_y
 
-    def principal(self):
+    def run(self):
         """Este es el loop principal del juego"""
+        self.running = True
         global scale, shift_x, shift_y
         pygame.time.set_timer(EVENTOREFRESCO,TIEMPOREFRESCO)
 
@@ -507,13 +508,17 @@ class Conozco():
 
         pygame.mouse.set_cursor((32,32), (1,1), *self.cursor)
 
-        while 1:
+        while self.running:
 
             while Gtk.events_pending():
                 Gtk.main_iteration()
+            if not self.running:
+                break
 
             for event in pygame.event.get():
-                if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.type == pygame.QUIT:
+                    return
+                elif event.type == pygame.MOUSEBUTTONDOWN:
                     pos = event.pos
                     #self.pantalla.blit(self.simboloCiudad, pos)
                     self.parent._add_coor(pos)
