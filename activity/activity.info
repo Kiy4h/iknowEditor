@@ -1,6 +1,6 @@
 [Activity]
 name = I know Editor
-activity_version = 1
+activity_version = 2
 bundle_id = org.ceibaljam.iknoweditor
 icon = editor
 exec = sugar-activity activity.IknowEditor

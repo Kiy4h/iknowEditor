@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import os
 from gettext import gettext as _
 
 
 def save(l):
-    f = open('salida.py', 'w')
+    home_dir = os.path.expanduser('~')
+    f = open(home_dir + '/salida.py', 'w')
     # encabezados
     f.write("# -*- coding: utf-8 -*-\n")
     f.write("\n")
