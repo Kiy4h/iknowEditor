@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # Conozco
@@ -30,7 +30,7 @@ import pygame
 import time
 import imp
 import gettext
-import ConfigParser
+import configparser
 from gettext import gettext as _
 from gi.repository import Gtk
 
@@ -247,43 +247,43 @@ class Conozco():
         try:
             f = imp.load_source('commons', a_path)
         except:
-            print _('Cannot open %s') % 'commons'
+            print(_('Cannot open %s') % 'commons')
 
         if f:
             if hasattr(f, 'ACTIVITY_NAME'):
                 e = f.ACTIVITY_NAME
-                self.activity_name = unicode(e, 'UTF-8')
+                self.activity_name = str(e, 'UTF-8')
             if hasattr(f, 'PREFIX'):
                 for e in f.PREFIX:
-                    e1 = unicode(e, 'UTF-8')
+                    e1 = str(e, 'UTF-8')
                     self.listaPrefijos.append(e1)
             if hasattr(f, 'SUFIX'):
                 for e in f.SUFIX:
-                    e1 = unicode(e, 'UTF-8')
+                    e1 = str(e, 'UTF-8')
                     self.listaSufijos.append(e1)  
             if hasattr(f, 'CORRECT'):
                 for e in f.CORRECT:
-                    e1 = unicode(e, 'UTF-8')
+                    e1 = str(e, 'UTF-8')
                     self.listaCorrecto.append(e1)
             if hasattr(f, 'WRONG'):
                 for e in f.WRONG:
-                    e1 = unicode(e, 'UTF-8')
+                    e1 = str(e, 'UTF-8')
                     self.listaMal.append(e1)
             if hasattr(f, 'BYE_C'):
                 for e in f.BYE_C:
-                    e1 = unicode(e, 'UTF-8')
+                    e1 = str(e, 'UTF-8')
                     self.listaDespedidasB.append(e1)
             if hasattr(f, 'BYE_W'):
                 for e in f.BYE_W:
-                    e1 = unicode(e, 'UTF-8')
+                    e1 = str(e, 'UTF-8')
                     self.listaDespedidasM.append(e1)
             if hasattr(f, 'PRESENTATION'):
                 for e in f.PRESENTATION:
-                    e1 = unicode(e, 'UTF-8')
+                    e1 = str(e, 'UTF-8')
                     self.listaPresentacion.append(e1)
             if hasattr(f, 'CREDITS'):
                 for e in f.CREDITS:
-                    e1 = unicode(e, 'UTF-8')
+                    e1 = str(e, 'UTF-8')
                     self.listaCreditos.append(e1)
 
         self.numeroSufijos = len(self.listaSufijos)
@@ -317,7 +317,7 @@ class Conozco():
         self.clock = pygame.time.Clock()
 
         self.parent = parent
-        file_activity_info = ConfigParser.ConfigParser()
+        file_activity_info = configparser.ConfigParser()
         activity_info_path = os.path.abspath('activity/activity.info')
         file_activity_info.read(activity_info_path)
         bundle_id = file_activity_info.get('Activity', 'bundle_id')

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import os
@@ -25,7 +25,7 @@ def save(l):
             first = False
         else:
             f.write(',\n')
-        
+
         lin = "    (_('" + str(r[0]) + "'), " + str(r[1]) + ", " + str(r[2])
         lin = lin + ", 2, " + str(r[3]) + ", " + str(r[4]) + ")"
 
