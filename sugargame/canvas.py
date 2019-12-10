@@ -3,7 +3,7 @@ from gi.repository import Gtk
 from gi.repository import GLib
 from sugar3.activity.activity import PREVIEW_SIZE
 import pygame
-import event
+from event import Translator
 
 CANVAS = None
 
@@ -17,7 +17,7 @@ class PygameCanvas(Gtk.EventBox):
         CANVAS = self
 
         # Initialize Events translator before widget gets "realized".
-        self.translator = event.Translator(activity, self)
+        self.translator = Translator(activity, self)
 
         self._activity = activity
         self._main = main
@@ -68,7 +68,7 @@ class PygameCanvas(Gtk.EventBox):
             return None
 
         _tmp_dir = os.path.join(self._activity.get_activity_root(),
-            'tmp')
+                                'tmp')
         _file_path = os.path.join(_tmp_dir, 'preview.png')
 
         width = PREVIEW_SIZE[0]
