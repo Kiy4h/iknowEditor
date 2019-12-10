@@ -255,36 +255,28 @@ class Conozco():
                 self.activity_name = str(e, 'UTF-8')
             if hasattr(f, 'PREFIX'):
                 for e in f.PREFIX:
-                    e1 = str(e, 'UTF-8')
-                    self.listaPrefijos.append(e1)
+                    self.listaPrefijos.append(e)
             if hasattr(f, 'SUFIX'):
                 for e in f.SUFIX:
-                    e1 = str(e, 'UTF-8')
-                    self.listaSufijos.append(e1)  
+                    self.listaSufijos.append(e)  
             if hasattr(f, 'CORRECT'):
                 for e in f.CORRECT:
-                    e1 = str(e, 'UTF-8')
-                    self.listaCorrecto.append(e1)
+                    self.listaCorrecto.append(e)
             if hasattr(f, 'WRONG'):
                 for e in f.WRONG:
-                    e1 = str(e, 'UTF-8')
-                    self.listaMal.append(e1)
+                    self.listaMal.append(e)
             if hasattr(f, 'BYE_C'):
                 for e in f.BYE_C:
-                    e1 = str(e, 'UTF-8')
-                    self.listaDespedidasB.append(e1)
+                    self.listaDespedidasB.append(e)
             if hasattr(f, 'BYE_W'):
                 for e in f.BYE_W:
-                    e1 = str(e, 'UTF-8')
-                    self.listaDespedidasM.append(e1)
+                    self.listaDespedidasM.append(e)
             if hasattr(f, 'PRESENTATION'):
                 for e in f.PRESENTATION:
-                    e1 = str(e, 'UTF-8')
-                    self.listaPresentacion.append(e1)
+                    self.listaPresentacion.append(e)
             if hasattr(f, 'CREDITS'):
                 for e in f.CREDITS:
-                    e1 = str(e, 'UTF-8')
-                    self.listaCreditos.append(e1)
+                    self.listaCreditos.append(e)
 
         self.numeroSufijos = len(self.listaSufijos)
         self.numeroPrefijos = len(self.listaPrefijos)
