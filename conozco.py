@@ -252,31 +252,39 @@ class Conozco():
         if f:
             if hasattr(f, 'ACTIVITY_NAME'):
                 e = f.ACTIVITY_NAME
-                self.activity_name = str(e, 'UTF-8')
+                self.activity_name = e.encode('UTF-8')
             if hasattr(f, 'PREFIX'):
                 for e in f.PREFIX:
-                    self.listaPrefijos.append(e)
+                    e1 = e.encode('UTF-8')
+                    self.listaPrefijos.append(e1)
             if hasattr(f, 'SUFIX'):
                 for e in f.SUFIX:
-                    self.listaSufijos.append(e)  
+                    e1 = e.encode('UTF-8')
+                    self.listaSufijos.append(e1)  
             if hasattr(f, 'CORRECT'):
                 for e in f.CORRECT:
-                    self.listaCorrecto.append(e)
+                    e1 = e.encode('UTF-8')
+                    self.listaCorrecto.append(e1)
             if hasattr(f, 'WRONG'):
                 for e in f.WRONG:
-                    self.listaMal.append(e)
+                    e1 = e.encode('UTF-8')
+                    self.listaMal.append(e1)
             if hasattr(f, 'BYE_C'):
                 for e in f.BYE_C:
-                    self.listaDespedidasB.append(e)
+                    e1 = e.encode('UTF-8')
+                    self.listaDespedidasB.append(e1)
             if hasattr(f, 'BYE_W'):
                 for e in f.BYE_W:
-                    self.listaDespedidasM.append(e)
+                    e1 = e.encode('UTF-8')
+                    self.listaDespedidasM.append(e1)
             if hasattr(f, 'PRESENTATION'):
                 for e in f.PRESENTATION:
-                    self.listaPresentacion.append(e)
+                    e1 = e.encode('UTF-8')
+                    self.listaPresentacion.append(e1)
             if hasattr(f, 'CREDITS'):
                 for e in f.CREDITS:
-                    self.listaCreditos.append(e)
+                    e1 = e.encode('UTF-8')
+                    self.listaCreditos.append(e1)
 
         self.numeroSufijos = len(self.listaSufijos)
         self.numeroPrefijos = len(self.listaPrefijos)
